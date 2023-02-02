@@ -49,7 +49,7 @@ app.get("/", async (req, res) => {
   res.json({ message: "hello Insta bot", quote: t });
 });
 
-app.post("/twitter", async (req, res) => {
+app.post("/instapost", async (req, res) => {
   var t = await postToInsta();
   res.json({ message: "hello Insta bot", quote: t });
 });
@@ -59,3 +59,6 @@ app.post("/twitter", async (req, res) => {
 // });
 
 // cronInsta.start();
+
+
+// https://insta-bot-sooty.vercel.app/instapost
