@@ -5,6 +5,8 @@ const { get } = require("request-promise");
 //for quotes
 const Quotes = require("randomquote-api");
 
+let caption = "Your views about this Post..?\n.\nThe comment section is yours!!\n.\nI post QUOTES daily\n.\n.\n.\nfollow\n@quotesbymyth\n@quotesbymyth\n@quotesbymyth\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#quotesbymyth #myth'squotes #wordsofwisdom #entrepreneur #goals #follow #quotesdaily #loveyourself #business #instadaily #wordporn #like #writersofig #happy #instawriters #writersofindia #yourquote #stories #art #quotesaboutlife #igwriters #writeaway #wordswag #igwritersclub #photography #motivate #nevergiveup #hustle #selfcare #yourself"
+
 const postToInsta = async () => {
   try {
     const ig = new IgApiClient();
@@ -21,7 +23,7 @@ const postToInsta = async () => {
 
     await ig.publish.photo({
       file: imageBuffer,
-      caption: "Really nice photo from the internet!",
+      caption: caption,
     });
     console.log(quoteToInsta);
     // console.log(typeof(process.env.UNAME))
