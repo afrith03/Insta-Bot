@@ -25,7 +25,7 @@ const postToInsta = async () => {
     let quoteToInsta = randomquote.quote.split(" ").join("%20");
     //  https://unsplash.it/200/300/?random
     const imageBuffer = await get({
-      url: `https://web-series-quotes-api.deta.dev/pic/custom?text=${quoteToInsta}&background_color=white&text_color=black&text_size=200&x=3600&y=2400`,
+      url: `https://web-series-quotes-api.deta.dev/pic/custom?text=${quoteToInsta}&background_color=white&text_color=black&text_size=150&x=1080&y=1080`,
       encoding: null,
     });
 
