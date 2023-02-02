@@ -28,7 +28,7 @@ const postToInsta = async () => {
     const imageBuffer = await get({
       url: `https://web-series-quotes-api.deta.dev/pic/custom?text=${quoteToInsta}&background_color=${
         theme ? "white" : "black"
-      }&text_color=${!theme ? "white" : "black"}&text_size=200&x=3600&y=3600`,
+      }&text_color=${!theme ? "white" : "black"}&text_size=100&x=1600&y=1600`,
       encoding: null,
     });
 
@@ -46,16 +46,16 @@ const postToInsta = async () => {
 
 app.get("/", async (req, res) => {
   var t = await postToInsta();
-  res.json({ message: "hello Insta bot", tweet: t });
+  res.json({ message: "hello Insta bot", quote: t });
 });
 
 app.post("/twitter", async (req, res) => {
   var t = await postToInsta();
-  res.json({ message: "hello Insta bot", tweet: t });
+  res.json({ message: "hello Insta bot", quote: t });
 });
 
 // const cronInsta = new CronJob("30 * * * * *", async () => {
-postToInsta();
+// postToInsta();
 // });
 
 // cronInsta.start();
