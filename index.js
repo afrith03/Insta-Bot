@@ -41,6 +41,7 @@ const postToInsta = async () => {
     // console.log(typeof(process.env.UNAME))
   } catch (error) {
     console.log(error);
+    return error
   }
 };
 
@@ -55,7 +56,7 @@ app.post("/instapost", async (req, res) => {
 });
 
 // const cronInsta = new CronJob("30 * * * * *", async () => {
-// postToInsta();
+postToInsta();
 // });
 
 // cronInsta.start();
