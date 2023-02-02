@@ -28,7 +28,7 @@ const postToInsta = async () => {
     const imageBuffer = await get({
       url: `https://web-series-quotes-api.deta.dev/pic/custom?text=${quoteToInsta}&background_color=${
         theme ? "white" : "black"
-      }&text_color=${!theme ? "white" : "black"}&text_size=100&x=1600&y=1600`,
+      }&text_color=${!theme ? "white" : "black"}&text_size=50&x=1080&y=1080`,
       encoding: null,
     });
 
