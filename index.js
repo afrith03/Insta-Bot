@@ -1,6 +1,8 @@
 require("dotenv").config();
 const { IgApiClient } = require("instagram-private-api");
 const { get } = require("request-promise");
+//hash . js for hash tag
+const { randomHashtag, hasharray } = require("./hash");
 // const CronJob = require("cron").CronJob;
 const express = require("express");
 const app = express();
@@ -13,8 +15,8 @@ app.listen(port, () => {
 const Quotes = require("randomquote-api");
 
 let caption =
-  "Your views about this Post..?\n.\nThe comment section is yours!!\n.\nI post QUOTES daily\n.\n.\n.\nfollow\n@quotesbymyth\n@quotesbymyth\n@quotesbymyth\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#quotesbymyth #wordsofwisdom #entrepreneur #goals #follow #quotesdaily #loveyourself #business #instadaily #wordporn #like #writersofig #happy #instawriters #writersofindia #yourquote #stories #art #quotesaboutlife #igwriters #writeaway #wordswag #igwritersclub #photography #motivate #nevergiveup #hustle #selfcare #yourself";
-
+  "Your views about this Post..?\n.\nThe comment section is yours!!\n.\nI post QUOTES daily\n.\n.\n.\nfollow\n@quotesbymyth\n@quotesbymyth\n@quotesbymyth\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#quotesbymyth";
+let captionWithHashTag = caption + randomHashtag(hasharray);
 const postToInsta = async () => {
   try {
     const ig = new IgApiClient();
@@ -34,14 +36,14 @@ const postToInsta = async () => {
 
     await ig.publish.photo({
       file: imageBuffer,
-      caption: caption,
+      caption: captionWithHashTag,
     });
     console.log(quoteToInsta);
     return quoteToInsta;
     // console.log(typeof(process.env.UNAME))
   } catch (error) {
     console.log(error);
-    return error
+    return error;
   }
 };
 
@@ -56,10 +58,9 @@ app.post("/instapost", async (req, res) => {
 });
 
 // const cronInsta = new CronJob("30 * * * * *", async () => {
-postToInsta();
+// postToInsta();
 // });
 
 // cronInsta.start();
-
 
 // https://insta-bot-sooty.vercel.app/instapost
