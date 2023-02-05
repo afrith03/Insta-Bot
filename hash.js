@@ -199,7 +199,7 @@ let hasharray = [
 //Math.abs()
 function randomHashtag(hasharray) {
   let generatedArray = [];
-  for (let i = 0; i < 27; i++) {
+  for (let i = 0; i < 20; i++) {
     let randomIndex = Math.ceil(Math.random() * hasharray.length - 1);
     var randValue = hasharray[randomIndex];
     if (generatedArray.includes(randValue)) {
