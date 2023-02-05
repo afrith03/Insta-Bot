@@ -15,7 +15,7 @@ app.listen(port, () => {
 const Quotes = require("randomquote-api");
 
 let caption =
-  "Your views about this Post..?\n.\nThe comment section is yours!!\n.\nI post QUOTES daily\n.\n.\n.\nfollow\n@quotesbymyth\n@quotesbymyth\n@quotesbymyth\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#quotesbymyth";
+  "Your views about this Post..?\n.\nThe comment section is yours!!\n.\nI post QUOTES daily\n.\n.\n.\nfollow\n@quotesbymyth\n@quotesbymyth\n@quotesbymyth\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n#quotesbymyth ";
 let captionWithHashTag = caption + randomHashtag(hasharray);
 const postToInsta = async () => {
   try {
@@ -49,7 +49,10 @@ const postToInsta = async () => {
 
 app.get("/", async (req, res) => {
   // var t = await postToInsta();
-  res.json({ message: "hello Insta bot", PostingUrl:"https://insta-bot-sooty.vercel.app/instapost" });
+  res.json({
+    message: "hello Insta bot",
+    PostingUrl: "https://insta-bot-sooty.vercel.app/instapost",
+  });
 });
 
 app.post("/instapost", async (req, res) => {
