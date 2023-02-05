@@ -48,8 +48,8 @@ const postToInsta = async () => {
 };
 
 app.get("/", async (req, res) => {
-  var t = await postToInsta();
-  res.json({ message: "hello Insta bot", quote: t });
+  // var t = await postToInsta();
+  res.json({ message: "hello Insta bot", PostingUrl:"https://insta-bot-sooty.vercel.app/instapost" });
 });
 
 app.post("/instapost", async (req, res) => {
