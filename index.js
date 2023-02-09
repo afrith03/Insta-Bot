@@ -58,7 +58,7 @@ app.get("/", async (req, res) => {
 app.post("/instapost", async (req, res) => {
   res.json({ message: "hello Insta bot", quote: "qoute was posted" });
   var t = await postToInsta();
-  console.log("posted");
+  console.log(t);
 });
 
 // const cronInsta = new CronJob("30 * * * * *", async () => {
