@@ -56,8 +56,8 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/instapost", async (req, res) => {
-  res.json({ message: "hello Insta bot", quote: "qoute was posted" });
   var t = await postToInsta();
+  res.json({ message: "hello Insta bot", quote: "qoute was posted"+t });
   console.log(t);
 });
 
